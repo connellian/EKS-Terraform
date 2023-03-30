@@ -9,6 +9,13 @@ terraform {
     }
   }
 */
+  backend "s3" {
+        bucket = "aws-eks-terraform-demo-create"
+        encrypt = true
+        key = "terraform.tfstate"
+        region = "us-east-1"
+    }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
